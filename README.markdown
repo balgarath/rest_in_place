@@ -1,3 +1,26 @@
+This is a patch for the original REST in Place plugin by Janv.
+
+The readme for the original plugin is provided below.
+I added the changes I made in the Readme below too.
+Also I have only changed the jQuery version of the plugin.
+I couldn't find time to change the testapp files, so still no testing with this patch.
+
+Changes:
+
+- Added the possibility to choose between an 'input' or 'textarea' form element.
+
+- The original plugin used the key 'enter' to submit. As textareas elements use
+the 'enter' key to add a new line, I changed the submit to the 'blur' event, or
+when the user clicks off the input or textarea (thinking about adding 'save' and
+'cancel' buttons, just like Flickr does).
+
+- As a brazilian, I translated 'saving...' to 'salvando...'.
+It is in Portuguese, not Spanish, ok?
+
+- That's just about it. Enjoy.
+
+
+
 REST in Place
 ===========
                                     _______
@@ -37,6 +60,14 @@ framework ). `rest_in_place.js` is the version for the Prototype framework,
 `jquery.rest_in_place.js` uses the [jQuery][] framework and `mootools.rest_in_place.js`
 uses [mootools][].
 
+<!--------PATCHED---------------------------------------------------------------------------->
+		
+		Remember that only the jquery version is patched (jquery.rest_in_place.js).
+		If you want to use the patched version, include the 'jquery.rest_in_place.js' file.
+		Otherwise, use the other javascript files and don't use the PATCHED instructions.
+
+<--------END PATCHED------------------------------------------------------------------------!>
+
 For REST in Place to work with Rails request forgery protection, place the
 following lines into your applications layout:
 
@@ -54,6 +85,29 @@ follows:
         <span class="rest_in_place" url="/users/1" object="user" attribute="name">
           <%= @user.name %>
         </span>
+		
+<!--------PATCHED---------------------------------------------------------------------------->
+		
+		Changed the class element attribute to 'rest_in_place_input' and 'rest_in_place_textarea'.
+		The class 'rest_in_place' doesn't work anymore in this patch.
+		Remember that only the jquery version is patched (jquery.rest_in_place.js).
+		
+		To add edit in place an element with a input field,
+		put attributes into the element like this:
+		
+		<span class="rest_in_place_input" url="/users/1" object="user" attribute="name">
+          <%= @user.name %>
+        </span>
+		
+		
+		To add edit in place an element with a textarea field,
+		put attributes into the element like this:
+		
+		<span class="rest_in_place_textarea" url="/users/1" object="user" attribute="name">
+          <%= @user.name %>
+        </span>
+
+<--------END PATCHED------------------------------------------------------------------------!>
   
 -   if any of these attributes is missing, DOM parents of the element are searched
     for them. That means you can write something like:
