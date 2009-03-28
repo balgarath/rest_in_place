@@ -62,9 +62,9 @@ uses [mootools][].
 
 <!--------PATCHED---------------------------------------------------------------------------->
 		
-		Remember that only the jquery version is patched (jquery.rest_in_place.js).
-		If you want to use the patched version, include the 'jquery.rest_in_place.js' file.
-		Otherwise, use the other javascript files and don't use the PATCHED instructions.
+Remember that only the jquery version is patched (jquery.rest_in_place.js).
+If you want to use the patched version, include the 'jquery.rest_in_place.js' file.
+Otherwise, use the other javascript files and don't use the PATCHED instructions.
 
 <--------END PATCHED------------------------------------------------------------------------!>
 
@@ -86,28 +86,27 @@ follows:
           <%= @user.name %>
         </span>
 		
-<!--------PATCHED---------------------------------------------------------------------------->
+<!--------PATCHED------------------------------------------------------------------------------->
 		
-		Changed the class element attribute to 'rest_in_place_input' and 'rest_in_place_textarea'.
-		The class 'rest_in_place' doesn't work anymore in this patch.
-		Remember that only the jquery version is patched (jquery.rest_in_place.js).
+Changed the class element attribute to 'rest_in_place_input' and 'rest_in_place_textarea'.
+The class 'rest_in_place' doesn't work anymore in this patch.
+
+(Remember that only the jquery version is patched).
 		
-		To add edit in place an element with a input field,
-		put attributes into the element like this:
+-	To add edit in place an element with a input field, put attributes into the element like this:
 		
 		<span class="rest_in_place_input" url="/users/1" object="user" attribute="name">
           <%= @user.name %>
         </span>
 		
 		
-		To add edit in place an element with a textarea field,
-		put attributes into the element like this:
+-	To add edit in place an element with a textarea field, put attributes into the element like this:
 		
 		<span class="rest_in_place_textarea" url="/users/1" object="user" attribute="name">
           <%= @user.name %>
         </span>
 
-<--------END PATCHED------------------------------------------------------------------------!>
+<--------END PATCHED---------------------------------------------------------------------------!>
   
 -   if any of these attributes is missing, DOM parents of the element are searched
     for them. That means you can write something like:
