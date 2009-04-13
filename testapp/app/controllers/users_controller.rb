@@ -9,7 +9,10 @@ class UsersController < ApplicationController
   end
   
   def show
+  	
     @user = User.find params[:id]
+    
+    @roles = Role.find :all
     respond_to do |type|
       type.html
       type.js {render :json => @user}

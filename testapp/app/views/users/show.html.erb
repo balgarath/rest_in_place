@@ -1,5 +1,6 @@
 <html>
 <head>
+		<%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag "jquery-1.2.6.min" , "jquery.rest_in_place" %>
     <%#= javascript_include_tag "prototype" , "rest_in_place" %>
     <%#= javascript_include_tag "mootools-121-core" , "mootools.rest_in_place" %>
@@ -10,7 +11,16 @@
 <body>
     <div id="<%= dom_id @user %>">
       ID: <%= @user.id %><br />
-      Name: <span class="rest_in_place" attribute="name"><%= @user.name %></span>
+      Name: <span class="rest_in_place_input" attribute="name"><%= @user.name %></span><br /><br />
+      
+      About:<br /> <span class = "rest_in_place_textarea" attribute = "about"><%= @user.about %></span>
+      <br /><br />
+      Role:
+      	<span class = "rest_in_place_select" attribute = "role_id">
+      		<span><%= @user.role.name %></span>
+      		<span><%= collection_select :user, :role_id, @roles, :id, :name %></span>
+      	</span>
+      
     </div>
 </body> 
 </html>

@@ -1,0 +1,5 @@
+.rest_in_place_textarea form textarea
+{
+	width: 400px;
+	height: 200px;
+}
