@@ -20,6 +20,11 @@
       		<span><%= @user.role.name %></span>
       		<span><%= collection_select :user, :role_id, @roles, :id, :name %></span>
       	</span>
+      <br /><br />
+      Valid:
+      	<span class = "rest_in_place_checkbox" attribute = "approved">
+      		<%= check_box :user, :approved %>
+      	</span>
       
     </div>
 </body> 
